@@ -10,8 +10,8 @@ import json
 
 def get_tab(url):
     result=requests.get(url)
-    print(result.text)
-    print('ttttttttttttt',  type(result.json()))
+    #print(result.text)
+    #print('ttttttttttttt',  type(result.json()))
     return result.json() 
 
 

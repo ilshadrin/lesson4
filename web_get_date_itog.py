@@ -1,15 +1,22 @@
+
+'''
+Добавьте на сайт страницу /names, 
+на которой в табличном виде выведите данные о именах новорожденных, 
+получаемые при помощи функции из предыдущей задачи. 
+'''
+
 import requests
 
 from flask import Flask, request
+from get_dat import get_tab
 
 app=Flask(__name__)
-@app.route('/')
+@app.route('/name')
 
 
 def name_baby():
     url="https://apidata.mos.ru/v1/datasets/2009/rows?api_key=5c2c86bfd50d746870bb0158d15cbac4"
-    result=requests.get(url)
-    baby_list=result.json() 
+    baby_list=get_tab(url) 
     result1 ='<table>'
     result1+='<tr>'
     result1+='<th>Name:  </th>' 
@@ -36,6 +43,4 @@ def name_baby():
 
 if __name__ == "__main__":
     app.run()
-
-
 
