@@ -6,7 +6,6 @@
 '''
 
 import requests
-
 from flask import Flask, request
 from get_dat import get_tab
 
